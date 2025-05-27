@@ -1,0 +1,41 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Assuming 'main' is the default branch. If it's 'master', this should be changed.
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # Or a current LTS version
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8 # Specify pnpm version, adjust if needed
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build project
+        run: pnpm run build # This runs 'gulp build' as per package.json
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          # Optional: if the base URL is not root (e.g., username.github.io/repo_name/)
+          # publish_branch: gh-pages # Default is gh-pages
+          # cname: your.custom.domain.com # If you have a custom domain
+          # user_name: 'github-actions[bot]' # Default
+          # user_email: 'github-actions[bot]@users.noreply.github.com' # Default
