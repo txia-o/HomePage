@@ -1,18 +1,18 @@
 {
 	"head": {
-		"title": "SimonAKing",
-		"description": "Author:SimonAKing,Category:Personal Blog",
+		"title": "Link & Young",
+		"description": "Author:Link & Young,Category:Personal Blog",
 		"favicon": "favicon.ico"
 	},
 	"intro": {
-		"title": "SimonAKing",
+		"title": "Link & Young",
 		"subtitle": "Front back left right end engineer",
 		"enter": "enter",
 		"supportAuthor": true,
 		"background": true
 	},
 	"main": {
-		"name": "SimonAKing",
+		"name": "Link & Young",
 		"signature": "Code & Input & Output",
 		"avatar": {
 			"link": "assets/avatar.jpg",
@@ -31,15 +31,16 @@
 				"text": "About"
 			},
 			"third": {
-				"href": "mailto:simon@tomotoes.com",
+				"href": "mailto:txia6260@gmail.com",
 				"icon": "email",
 				"text": "Email"
 			},
 			"fourth": {
-				"href": "https://github.com/tomotoes",
+				"href": "https://github.com/txia-o",
 				"icon": "github",
 				"text": "Github"
 			}
 		}
 	}
 }
+
